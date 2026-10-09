@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmiva Loka | Launching Soon</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D97706',
+                            accent: '#F59E0B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Atmospheric background image with warm radial overlay */
+        .bg-temple-sunrise {
+            background-image: 
+                linear-gradient(to bottom, rgba(5, 7, 10, 0.55) 0%, rgba(15, 10, 5, 0.65) 50%, rgba(5, 7, 10, 0.85) 100%),
+                url('Temple.png'); /* Update this path if your image is stored in a subfolder like images/Temple.png */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .sun-glow {
+            background: radial-gradient(circle at 50% 40%, rgba(245, 158, 11, 0.25) 0%, rgba(217, 119, 6, 0.10) 40%, transparent 70%);
+        }
+
+        .glass-card {
+            background: rgba(10, 14, 23, 0.72);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(217, 119, 6, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-temple-sunrise text-gray-100 min-h-screen font-sans antialiased flex flex-col justify-between selection:bg-amber-600 selection:text-white relative">
+
+    <!-- Ambient Glow Effect -->
+    <div class="absolute inset-0 sun-glow pointer-events-none z-0"></div>
+
+    <!-- Navigation Header -->
+    <header class="relative z-10 w-full max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="h-7 w-7 rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 shadow-lg shadow-amber-500/50 animate-pulse"></div>
+        </div>
+        
+        <div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/50 border border-amber-500/30 text-xs text-amber-300 backdrop-blur-md shadow-md">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+            </span>
+            Status: Early Access Open
+        </div>
+    </header>
+
+    <!-- Main Hero Container -->
+    <main class="relative z-10 w-full max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 flex flex-col justify-center items-center text-center">
+       
+        <div class="w-full glass-card p-6 sm:p-12 rounded-3xl relative overflow-hidden">
+            
+            <div class="uppercase text-xs font-bold text-amber-400 mb-4 tracking-[0.2em]">
+                THE JOURNEY BEGINS
+            </div>
+
+            <!-- Dynamic Countdown Timer -->
+            <div class="mb-8">
+                <div class="text-amber-400 font-mono text-2xl sm:text-4xl font-extrabold tracking-wider mb-2 drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]">
+                    LAUNCHING IN: [<span id="timer-days">00</span> : <span id="timer-hours">00</span> : <span id="timer-mins">00</span> : <span id="timer-secs">00</span>]
+                </div>
+                <p class="text-[11px] text-gray-300 tracking-widest uppercase font-semibold">Days : Hours : Minutes : Seconds</p>
+            </div>
+
+            <!-- Hero Headlines and Body Copy -->
+            <h1 class="text-3xl sm:text-5xl font-serif text-white mb-5 leading-tight drop-shadow-md">
+                Step through the Digital Gateway to the Divine.
+            </h1>
+            
+            <p class="text-sm sm:text-base text-amber-200/90 font-medium max-w-xl mx-auto mb-3">
+                A new way to experience India’s sacred sanctuaries. Unveiling soon.
+            </p>
+
+    
+            <!-- Web3Forms Direct Form Integration -->
+            <div class="w-full max-w-md mx-auto">
+                <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col sm:flex-row gap-3">
+                    <input type="hidden" name="access_key" value="4cd286d0-975f-404a-a403-20ff5e7b3149">
+                    <input type="hidden" name="subject" value="New Early Access Request - Atmiva Loka">
+                    <input type="hidden" name="from_name" value="Atmiva Loka Teaser Page">
+                    
+                    <input 
+                        type="email" 
+                        name="email" 
+                        required 
+                        placeholder="Enter your sacred email..." 
+                        class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-amber-500/40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all text-sm backdrop-blur-md"
+                    >
+                    <button 
+                        type="submit" 
+                        class="whitespace-nowrap px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-400 hover:to-amber-600 text-white font-bold shadow-lg shadow-amber-900/50 transition-all hover:scale-[1.02] active:scale-[0.98] text-sm tracking-wide"
+                    >
+                        JOIN THE QUEST
+                    </button>
+                </form>
+                <p class="text-xs text-gray-400 mt-4 flex items-center justify-center gap-1.5">
+                    <span>🔒</span> Strictly limited to early seekers. No spam, ever.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 w-full max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400 gap-4">
+        <div>
+            © 2026 Stealth Project. All rights reserved.
+        </div>
+        <div>
+            <button onclick="togglePrivacyModal()" class="hover:text-amber-300 transition-colors focus:outline-none underline">Privacy Policy</button>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="hidden fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div class="bg-gray-900 border border-amber-900/40 rounded-2xl max-w-lg w-full p-6 text-left relative shadow-2xl">
+            <button onclick="togglePrivacyModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg font-bold">✕</button>
+            <h2 class="text-lg font-bold text-amber-400 mb-4">Privacy Policy</h2>
+            <div class="text-xs text-gray-300 space-y-3 max-h-80 overflow-y-auto pr-2 leading-relaxed">
+                <p><strong class="text-white">Information Collection:</strong> We only collect your email address when you voluntarily submit it to request early access.</p>
+                <p><strong class="text-white">Use of Data:</strong> Your email address is strictly used to notify you about early access, product launches, and priority invites for this application. We will never sell, lease, or share your contact details with third parties.</p>
+                <p><strong class="text-white">Data Security:</strong> We implement encrypted protocols to keep your information safe and prevent unauthorized access.</p>
+                <p><strong class="text-white">Opt-Out:</strong> You may request the removal of your email from our early access list at any time by contacting us upon receiving our initial launch email.</p>
+            </div>
+            <div class="mt-6 text-right">
+                <button onclick="togglePrivacyModal()" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold rounded-lg transition-colors">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        const targetDate = new Date("October 20, 2026 13:00:00").getTime();
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById("timer-days").innerText = String(days).padStart(2, '0');
+                document.getElementById("timer-hours").innerText = String(hours).padStart(2, '0');
+                document.getElementById("timer-mins").innerText = String(minutes).padStart(2, '0');
+                document.getElementById("timer-secs").innerText = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById("timer-days").innerText = "00";
+                document.getElementById("timer-hours").innerText = "00";
+                document.getElementById("timer-mins").innerText = "00";
+                document.getElementById("timer-secs").innerText = "00";
+            }
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        function togglePrivacyModal() {
+            const modal = document.getElementById('privacy-modal');
+            modal.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
